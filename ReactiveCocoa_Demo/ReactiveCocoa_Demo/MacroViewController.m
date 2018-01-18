@@ -27,14 +27,19 @@
     self.title = @"Macro";
     
 //    [self macroRAC];
-    
 //    [self macroRACObserve];
-    
     [self macroWeakifyStrongify];
-    
 //    [self macroRACTupleUnpack];
 }
+/*
 
+
+
+
+RACChannelTo(TARGET, ...)
+RACChannelTo 用于双向绑定
+RACChannelTo(self, stringProperty)=RACChannelTo(self.label, text) ;
+*/
 - (void)macroRAC {
     
 //    [_textField.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
@@ -43,6 +48,11 @@
     
     // RAC:把一个对象的某个属性绑定一个信号,只要发出信号,就会把信号的内容给对象的属性赋值
     // 给label的text属性绑定了文本框改变的信号
+//    RAC(TARGET, ...)
+//    表现形式:RAC(self, stringProperty) = TextField.rac_textSignal
+//    第一个是需要设置属性值的对象，第二个是属性名
+//    RAC宏允许直接把信号的输出应用到对象的属性上
+//    每次信号产生一个next事件，传递过来的值都会应用到该属性上
     RAC(self.label, text) = _textField.rac_textSignal;
 }
 
@@ -50,6 +60,9 @@
     // KVO
     // RACObserveL:快速的监听某个对象的某个属性改变
     // 返回的是一个信号,对象的某个属性改变的信号
+//    RACObserve(TARGET, KEYPATH)
+//    表现形式:RACObserve(self, stringProperty)
+//    KVO的简化版本 相当于对TARGET中KEYPATH的值设置监听，返回一个RACSignal
     [RACObserve(self.view, center) subscribeNext:^(id x) {
         NSLog(@"%@",x);
     }];

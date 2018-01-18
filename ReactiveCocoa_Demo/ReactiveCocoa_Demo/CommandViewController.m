@@ -23,14 +23,27 @@
     
     self.title = @"Command";
     
-//    [self command1];
     
-    [self command2];
     
+    [self command1];
+//    [self command2];
+//    [self command3];
 //    [self signalOfSignals];
 }
 
 - (void)command1 {
+    UIButton *reactiveBtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    reactiveBtn.backgroundColor = [UIColor lightGrayColor];
+    [self.view addSubview:reactiveBtn];
+    [reactiveBtn setTitle:@"点我" forState:UIControlStateNormal];
+    reactiveBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *input) {
+        NSLog(@"点击了我:%@",input.currentTitle);
+        //返回一个空的信号量
+        return [RACSignal empty];
+    }];
+}
+
+- (void)command2 {
     // 使用注意点：RACCommand中的block不能返回一个nil的信号
     RACCommand *command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
         NSLog(@"执行命令 %@", input);
@@ -75,7 +88,7 @@
     [command execute:@(1)];
 }
 
-- (void)command2 {
+- (void)command3 {
     RACCommand *command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
         NSLog(@"执行命令 %@", input);
         return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {

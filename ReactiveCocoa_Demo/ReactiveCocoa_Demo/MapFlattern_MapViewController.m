@@ -24,8 +24,9 @@
     
     self.title = @"MapFlattern_Map";
     
+    [self sequenceSignal];
 //    [self flattenMap];
-    [self map];
+//    [self map];
 //    [self signalOfSignals];
 }
 
@@ -76,6 +77,14 @@
     NSLog(@"%@", [[[@[s0, s1] rac_sequence] flattenMap:^__kindof RACSequence * _Nullable(id  _Nullable value) {
         return value;
     }] array]);
+}
+
+- (void)sequenceSignal {
+    RACSignal *signal = [@"A B C D E F G H I" componentsSeparatedByString:@" "].rac_sequence.signal;
+    [signal subscribeNext:^(NSString *x) {
+        NSLog(@"subscribeNext: %@", x);
+    }];
+    
 }
 
 - (void)flattenMap {

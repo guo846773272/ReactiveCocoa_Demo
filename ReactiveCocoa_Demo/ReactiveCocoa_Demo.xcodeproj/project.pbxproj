@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7024054200F283D00CDCD73 /* desc.md in Resources */ = {isa = PBXBuildFile; fileRef = E7024053200F283D00CDCD73 /* desc.md */; };
+		E7024056200F2CA800CDCD73 /* config.md in Resources */ = {isa = PBXBuildFile; fileRef = E7024055200F2CA800CDCD73 /* config.md */; };
 		E7036C5C200732C200998CC7 /* MapFlattern_MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7036C5A200732C200998CC7 /* MapFlattern_MapViewController.m */; };
 		E7036C5D200732C200998CC7 /* MapFlattern_MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7036C5B200732C200998CC7 /* MapFlattern_MapViewController.xib */; };
 		E7036C6B20074AA100998CC7 /* Concat_Then_Merge_Zip_CombineLatest_ReduceViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7036C6920074AA100998CC7 /* Concat_Then_Merge_Zip_CombineLatest_ReduceViewControllerViewController.m */; };
@@ -58,6 +60,8 @@
 /* Begin PBXFileReference section */
 		0FD997551660230C8C14C14B /* Pods-ReactiveCocoa_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveCocoa_Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveCocoa_Demo/Pods-ReactiveCocoa_Demo.release.xcconfig"; sourceTree = "<group>"; };
 		A78FA4842847171BBCC2E2D0 /* Pods_ReactiveCocoa_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveCocoa_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7024053200F283D00CDCD73 /* desc.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = desc.md; sourceTree = "<group>"; };
+		E7024055200F2CA800CDCD73 /* config.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = config.md; sourceTree = "<group>"; };
 		E7036C59200732C200998CC7 /* MapFlattern_MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapFlattern_MapViewController.h; sourceTree = "<group>"; };
 		E7036C5A200732C200998CC7 /* MapFlattern_MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapFlattern_MapViewController.m; sourceTree = "<group>"; };
 		E7036C5B200732C200998CC7 /* MapFlattern_MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapFlattern_MapViewController.xib; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 		E73631BA1FFF7F0C00CF5998 /* ReactiveCocoa_Demo */ = {
 			isa = PBXGroup;
 			children = (
+				E7024053200F283D00CDCD73 /* desc.md */,
+				E7024055200F2CA800CDCD73 /* config.md */,
 				E73631BE1FFF7F0C00CF5998 /* AppDelegate.h */,
 				E73631BF1FFF7F0C00CF5998 /* AppDelegate.m */,
 				E76B4834200C9C100051E677 /* ViewController.h */,
@@ -326,7 +332,9 @@
 				E7036C80200769E200998CC7 /* Timeout_Interval_DelayViewController.xib in Resources */,
 				E7036C7B2007694D00998CC7 /* DeliverOn_SubscribeOnViewController.xib in Resources */,
 				E7F7F725200083D3008F8EAB /* SideEffectsViewController.xib in Resources */,
+				E7024054200F283D00CDCD73 /* desc.md in Resources */,
 				E75D874D20061183009AE550 /* ReplaySubjectViewController.xib in Resources */,
+				E7024056200F2CA800CDCD73 /* config.md in Resources */,
 				E736321C1FFF924000CF5998 /* RGBSlidersViewController.xib in Resources */,
 				E76BE8B72008B7BF00528806 /* MVVMViewController.xib in Resources */,
 				E7036C6C20074AA100998CC7 /* Concat_Then_Merge_Zip_CombineLatest_ReduceViewControllerViewController.xib in Resources */,

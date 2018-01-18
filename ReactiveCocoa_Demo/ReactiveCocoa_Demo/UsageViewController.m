@@ -87,13 +87,13 @@
 }
 
 - (void)notification {
+//    RAC中的通知不需要remove observer,因为在rac_add方法中他已经写了remove
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIKeyboardDidChangeFrameNotification object:nil] subscribeNext:^(NSNotification * _Nullable x) {
         NSLog(@"键盘");
     }];
 }
 
-- (void)textChange
-{
+- (void)textChange {
     // 5.监听文本框文字改变
     // 获取文本框文字改变的信号
     [_textField.rac_textSignal subscribeNext:^(id x) {

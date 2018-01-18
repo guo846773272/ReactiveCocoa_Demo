@@ -30,7 +30,7 @@
 }
 
 - (void)concat {
-    //    concat:按一定顺序拼接信号，当多个信号发出的时候，有顺序的接收信号。
+    //concat:按一定顺序拼接信号，当多个信号发出的时候，有顺序的接收信号。
     RACSignal *signal0 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         
         [subscriber sendNext:@0];

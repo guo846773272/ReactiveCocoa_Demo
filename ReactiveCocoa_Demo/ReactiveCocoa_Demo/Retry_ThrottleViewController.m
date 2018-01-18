@@ -72,6 +72,8 @@
     RACSubject *signal = [RACSubject subject];
     _signal = signal;
 //    节流，在一定时间（1秒）内，不接收任何信号内容，过了这个时间（1秒）获取最后发送的信号内容发出。
+//    每次输入一个字，搜索都会马上执行。如果你输入很快（或者只是一直按着删除键），这可能会造成应用在一秒内执行好几次搜索，这很不理想。
+//    更好的解决方法是，当搜索文本在短时间内，比如说500毫秒，不再变化时，再执行搜索
     [[signal throttle:1] subscribeNext:^(id  _Nullable x) {
         NSLog(@"subscribeNext: %@", x);
     }];
